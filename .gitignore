@@ -1,0 +1,28 @@
+# ingore build artifacts from latex
+*.fls
+*.log
+*.aux
+*.fdb_latexmk
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.lol
+
+# ignore build artifacts from bibtex and biblatex
+*.bbl
+*.blg
+*.lof
+*.lot
+*.run.xml
+*.bcf
+
+# ingore compiled pdfs
+*.pdf
+
+# ignore compile aritfacts from c#
+bin/
+obj/
+
+# ingore python artifacts
+.venv
