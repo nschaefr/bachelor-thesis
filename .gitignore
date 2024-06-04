@@ -1,8 +1,14 @@
 # ingore build artifacts from latex
-*/.output
+*.fls
+*.log
+*.aux
+*.fdb_latexmk
+*.out
+*.toc
 *.synctex.gz
-*.xdv
+*.synctex(busy)
 *.lol
+*.xdv
 
 # ignore build artifacts from bibtex and biblatex
 *.bbl
