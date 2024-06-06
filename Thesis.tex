@@ -27,9 +27,9 @@
 \newcommand{\autor}{Nils Schäfer}
 \newcommand{\geburtsort}{Riesa}
 \newcommand{\geburtstag}{29.10.2000}
-\newcommand{\titel}{TITEL}
+\newcommand{\titel}{Automatisierte Generierung von Unit Tests für Java-Anwendungen durch Large Language Models}
 % Falls kein Untertitel, einfach leer lassen
-\newcommand{\subtitel}{UNTERTITEL}
+\newcommand{\subtitel}{}
 \newcommand{\fakultät}{Informatik und Medien}
 \newcommand{\erstgutachter}{NAME ERSTGUTACHTER}
 \newcommand{\instituteErstgutachter}{INSTITUT}
@@ -45,20 +45,20 @@
 % Einbinden aller Pakete etc.
 %##########################################################
 
-\input{Headerfiles/preamble}
-\input{Verzeichnisse/Abkuerzungen}
+\input{Headerfiles/Preamble}
+\input{References/Acronyms}
 
 %##########################################################
 % Begin des Dokumentes
 %##########################################################
 \begin{document}
 
-\include{Headerfiles/header}
-\include{Headerfiles/titlepage}
+\include{Headerfiles/Header}
+\include{Headerfiles/TitlePage}
 
 %##########################################################
 % Sperrvermerk
-% Ist vorher abzuklären!
+% Ist vorher abzuklären
 %##########################################################
 \pagenumbering{gobble}
 %\include{Formalien/Sperrvermerk}
@@ -66,17 +66,17 @@
 %##########################################################
 % Eidesstaatliche Erklärung
 %##########################################################
-\include{Formalien/EidesstaatlicheErklaerung}
+%\include{Formalities/EidesstaatlicheErklaerung}
 
 %##########################################################
 % Vorwort (optional)
 %##########################################################
-\include{Formalien/Vorwort}
+%\include{Formalities/Vorwort}
 
 %##########################################################
 % Abstract/Kurzfassung
 %##########################################################
-\include{Formalien/Kurzfassung}
+%\include{Formalities/Kurzfassung}
 
 %##########################################################
 % Inhaltsverzeichnis
@@ -108,32 +108,12 @@
 %##########################################################
 % Erstes Kapitel
 %##########################################################
-\include{Kapitel/ErstesKapitel}
-
-%##########################################################
-% Zweites Kapitel
-%##########################################################
-\include{Kapitel/ZweitesKapitel}
-
-%##########################################################
-% Drittes Kapitel
-%##########################################################
-\include{Kapitel/DrittesKapitel}
-
-%##########################################################
-% Viertes Kapitel
-%##########################################################
-\include{Kapitel/ViertesKapitel}
-
-%##########################################################
-% Fünftes Kapitel
-%##########################################################
-\include{Kapitel/FuenftesKapitel}
+\include{Chapter/Introduction}
 
 %##########################################################
 % Literatur
 %##########################################################
-\include{Verzeichnisse/Literatur}
+\printbibliography[title=Literaturverzeichnis,heading=bibintoc]
 
 %##########################################################
 % Anhang - nicht verwendete Anhangsseiten bitte kommentieren
@@ -142,9 +122,9 @@
 \pagenumbering{Roman}
 \setcounter{page}{1}
 
-\include{Anhang/AnhangAbbildungen}
-\include{Anhang/AnhangTabellen}
-\include{Anhang/AnhangQuelltexte}
+\include{Appendix/AnhangAbbildungen}
+\include{Appendix/AnhangTabellen}
+\include{Appendix/AnhangQuelltexte}
 
 % ***********************************************
 \end{document}

@@ -2,13 +2,14 @@
 
 
 %##########################################################
-% Pakete - Stil, Sprache und Schriftart
+% Pakete - Stil, Sprache und Schriftar
 %##########################################################
 \usepackage[UKenglish,ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{csquotes}
+\usepackage{titletoc,tocloft}
 \usepackage[backend=biber,sorting=none,bibencoding=utf8]{biblatex}
-\addbibresource{MusterBachelorArbeitBib.bib}
+\addbibresource{References/References.bib}
 \usepackage[headsepline]{scrlayer-scrpage}
 \usepackage{fontspec}
 \setcounter{tocdepth}{\subsubsectiontocdepth}
@@ -17,7 +18,7 @@
 %## #### #### ####### ###
 \usepackage[absolute, overlay]{textpos}
 \usepackage{svg}
-%\DeclareGraphicsExtensions{.png,.jpg,.gif,.pdf,.svg}
+%\DeclareGraphicsExtensions{.png,.jpg,.gif,.pdf,.svg
 %\renewcommand\includesvg[2][]{\includegraphics{#2}}
 
 \AtBeginDocument{%
@@ -50,12 +51,11 @@
 %Linkformatierung
 \usepackage[
 	    colorlinks=true,
-	    urlcolor=htwkBlau,
-	    citecolor=htwkBlau,
+	    linkcolor=black,
+		urlcolor=htwkBlau,
 		pdftitle={\titel},
 		pdfauthor={\autor},
 		breaklinks=true,
-		hidelinks
 ]{hyperref}
 
 %##########################################################
