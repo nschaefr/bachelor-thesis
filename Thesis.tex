@@ -60,7 +60,7 @@
 % Sperrvermerk
 % Ist vorher abzuklären
 %##########################################################
-\pagenumbering{gobble}
+\pagenumbering{Roman}
 %\include{Formalien/Sperrvermerk}
 
 %##########################################################
@@ -82,16 +82,21 @@
 % Inhaltsverzeichnis
 %##########################################################
 \tableofcontents
+\clearpage
 
 %##########################################################
 % Abbildungsverzeichnis
 %##########################################################
 \listoffigures
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\clearpage
 
 %##########################################################
 % Tabellenverzeichnis
 %##########################################################\
 \listoftables
+\clearpage
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
 
 %##########################################################
 % Quelltextverzeichnis
@@ -109,6 +114,11 @@
 % Erstes Kapitel
 %##########################################################
 \include{Chapter/Introduction}
+
+%##########################################################
+% Zweites Kapitel
+%##########################################################
+\include{Chapter/Technical_Basics}
 
 %##########################################################
 % Literatur

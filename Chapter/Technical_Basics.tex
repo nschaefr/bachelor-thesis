@@ -1,0 +1,50 @@
+%!TeX root = ./../Thesis.tex
+
+%##########################################################
+% Inhalt
+%##########################################################
+\chapter{Grundlagen}
+Dieses Kapitel ist zur Vermittlung von technischen Grundlagen, um im Verlauf der Arbeit angewandte Technologien zu verstehen und umgesetzte Lösungsversuche nachvollziehen zu können. Dabei wird Fokus auf den SDLC, das Thema der LLMs sowie dem \textit{Prompt Engineering} gelegt. Da Unit-Tests einen wichtigen Bestandteil der Arbeit repräsentieren, werden Grundlagen zu diesen Tests geschaffen und der Bezug zur Programmiersprache Java hergestellt.
+
+\section{Software Development Lifecycle}
+Der SDLC ist ein Grundlagenzyklus, welcher innerhalb eines Softwareprojektes festgelegt und während der Bearbeitung des Projektes befolgt wird. \cite*{SoftwareDevelopmentLife} Dieser dient zur Verbesserung von Qualität und Entwicklungsprozess.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{Assets/Pictures/SDLC.png}
+    \caption{Phasen eines SDLC - Quelle: \cite*{tikySoftwareDevelopmentLife}}
+    \label{fig:sdlc}
+\end{figure}
+Ein typischer SDLC besteht aus 6 verschiedenen Phasen. [Abb. \ref{fig:sdlc}]\\\\
+\textbf{Planung}\\[0.2cm]
+Eine Planung erfolgt in der Regel durch eine neue Innovation, welche von einem Endnutzer oder Sponsor ausgeht. \cite*{tikySoftwareDevelopmentLife} Hierbei werden Projektumfang, Ziele sowie Anforderungen definiert. Dabei steht vor allem der Projektplan im Fokus, welcher Zeitrahmen und Ressourcen definiert. \cite*{hossainSoftwareDevelopmentLife2023}\\\\
+\textbf{Entwurf}\\[0.2cm]
+In der Entwurfsphase wird festgelegt, wie benötigte Softwarekomponenten zusammenwirken und eine Produktarchitektur definiert. Es kommt zum Entwerfen des \textit{User Interfaces} (engl. Benutzeroberfläche) mit Blick auf die \textit{User Experience} (engl. Benutzererfahrung). \cite*{hossainSoftwareDevelopmentLife2023}\\\\
+\textbf{Entwicklung und Implementierung}\\[0.2cm]
+Nach Abschluss aller vorher nötigen Phasen, beginnen Programmierer mit der Entwicklung und Implementation der Software bei Einhaltung aller festgelegten Anforderungen und entsprechend dem Architekturentwurf. \cite*{tikySoftwareDevelopmentLife} \\\\
+\textbf{Testen}\\[0.2cm]
+Das Testen der Software ist eine wichtige und essenzielle Phase, die während sowie nach der Entwicklung stattfindet. Hierbei kommt es zur Durchführung verschiedener Teststufen, einschließlich Unit-Tests, Integration Tests, System Tests und Benutzerakzeptanz Tests. Es werden Fehler identifiziert und behoben sowie Anforderungen aus vorherigen Phasen überprüft. \cite*{hossainSoftwareDevelopmentLife2023}\\\\
+\textbf{Deployment und Wartung}\\[0.2cm]
+Zum \textit{Deployment} gehört die Bereitstellung der Software in einer Staging-Umgebung. Diese wird vorausgesetzt um abschließende Tests durchzuführen und die Software zu validieren. Es werden Server und Datenbanken konfiguriert, sodass eine Produktionsumgebung vorbereitet wird. Nach erfolgreichen \textit{Rollout} (engl. ausrollen) der Software steht die Überwachung und Wartung der Produktionsumgebung im Fokus. \cite*{hossainSoftwareDevelopmentLife2023}\\\\
+Insbesondere die Phase des Testens sollte als eine \textit{Sub stage} (engl. Unterstufe) jeder Phasen betrachtet werden, da ein Testen von Anforderungen, Implementation, Code sowie Deployment dauerhaft notwendig ist. Aufgrund dessen ist die Testphase besonders komplex und aufwändig, weshalb der Fokus ständig aufrechterhalten werden muss. \cite*{tikySoftwareDevelopmentLife}
+
+\section{Large Language Models}
+\subsection{Begriff und Einführung}
+Hinter dem simplen Begriff \textit{Large Language Model} (engl. Großes Sprachmodell) steckt eine komplizierte Technologie mit großer Herkunftsgeschichte, welche eine Definition mehrerer Begrifflichkeiten im Feld der Künstlichen Intelligenz (kurz KI) vorraussetzt. Dadurch kann ein Grundverständnis geschaffen werden, um den Begriff LLM besser einordnen zu können. \cite{seemannKuenstlicheIntelligenzLarge} \\\\ Ein Hauptbestandteil der KI spielen \textbf{Künstliche Neuronale Netze} (kurz \acs{KNN}). 
+Die Inspiration dieser Netze entstammt dem Neuronalen Netzwerk im Gehirn eines Menschen. \cite*{seemannKuenstlicheIntelligenzLarge} Das Ziel dabei ist, natürliche Organismen nachzubauen, und somit lernfähige Programme zu erzeugen. 
+\input{Assets/LaTeX/KNN}
+Der Aufbau eines solchen Netzes folgt dem Vorbild der Struktur des menschlichen Gehirns und besteht somit aus verbundenen künstlichen Nervenzellen (Neuronen), welche durch eine Eingabeschicht passende Ausgaben erzeugen. \cite*{morrKuNstlicheNeuronale} Unterschieden wird hier zwischen 3 verschiedenen Arten von Neuronen. Somit besteht ein Netz grundlegend aus Input-, Hidden- und Outputneuronen, zwischen denen eine gewichtete Verbindung herrschen kann. \cite*{NeuronaleNetzeEinfuhrung} [Abb. \ref{fig:knn}] Durch solch eine Struktur können KNN durch maschinelles Lernen mit großen Datenmengen trainiert werden und dadurch Fähigkeiten wie das Generieren von Texten erlernen. \cite*{seemannKuenstlicheIntelligenzLarge}\\\\ Ein weiteres Teilgebiet in der KI ist das \textbf{Natural Language Processing} (engl. Natürliche Sprachverarbeitung, kurz NLP). Hierbei liegt der Fokus auf der Interaktion zwischen Computern und menschlicher Sprache, in dem Algortihmen und Modelle ermöglichen, dass Computer die menschliche Sprache verstehen, interpretieren und auf sinnvolle Weise erzeugen können. \cite*{muruganNaturalLanguageProcessing2024} \\\\ Dies schafft die Grundlage eines \textbf{Large Language Models}, denn diese Modelle basieren auf KNN und sind spezialisiert auf die Natürliche Sprachverarbeitung. \cite*{seemannKuenstlicheIntelligenzLarge} Sie sind ausgelegt, um Beziehungen zwischen einzelnen Daten zu lernen und Sequenzen vorherzusagen. Insbesondere deswegen sind sie für die Generierung von Text in natürlicher Sprache geeignet, da sie die Fähigkeit besitzen Sprache aus großen Datensätzen von geschriebenen Texten im Internet sowie digitalisierten Büchern zu erlernen, um sich in neuartigen Situtationen angepasst verhalten zu können. \cite*{okerlundWhatChatterbox2022} \cite*{authorityofthehouseoflordsLargeLanguageModels} \\Ein \textit{pre-training} (engl. Vortraining) oder auch \textit{fine-tuning} (engl. Feinabstimmung) ist in vielen Fällen notwendig, um die Genauigkeit des Modells auf bestimmte Bereiche zu verbessern. \cite{HowLLMsWork} Um eine solche Genauigkeit zu gewährleisten, arbeiten Sprachmodelle mit dem Prinzip der \textit{Tokenisierung}. Im Rahmen dieses Vorverarbeitungsschritts erfolgt eine Zerlegung des Textes in Token, wobei diese aus Zeichen, Teilwörtern oder Symbolen bestehen können. \cite*{naveedComprehensiveOverviewLarge2024} \\ Grundlegend nehmen LLMs einen Prompt als Eingabe entgegen und generieren abhängig von gesetzten Parametern des Modells, sowie bisher erlernten Informationen, eine Ausgabe. Das vorhergesagte Wort ist das Ergebnis einer Wahrscheinlichkeitsverteilung des Modells, und wird solange mit der Sequenz verknüpft, bis sie endgültig ist. [Abb. \ref{fig:word}]
+\input{Assets/LaTeX/Word_process.tex} 
+Dabei können unterschiedliche Ergebnisse erzielt werden, welche abhängig von der \textit{sampling strategy} (engl. Stichprobenstrategie) sind. \cite*{cholletDeepLearningPython2018} Um auf die Qualität der Ergebnisse Einfluss zu nehmen, gibt es die Möglichkeit manuelle Parameter zu setzen. Darunter zählen z.B. \textit{max tokens} zum festlegen der maximalen Anzahl an Tokens, die generiert werden dürfen oder auch die \textit{temperature}, welche die Zufälligkeit von 0.0 (deterministisch) - 2.0 (extrem zufällig) regelt. Im Allgemeinen finden LLMs eine große Spannbreite an Anwendung, wie bspw. Textgenerierung, Vervollständigung und Zusammenfassung. \cite*{dhadukHowLargeLanguage2023}
+
+\subsection{Modelle}
+
+
+\section{Prompt Engineering}
+
+\subsection{Prompt Techniken}
+
+\subsection{LLM-Parameter und deren Einfluss}
+
+\section{Unit Testing}
+
+
