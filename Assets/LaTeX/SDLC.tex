@@ -1,0 +1,20 @@
+\begin{figure}[ht]
+    \centering
+    \tikzstyle{block} = [circle, draw, text width=3.2em, text centered, rounded corners, minimum height=3em, font=\small]
+    \begin{tikzpicture}
+        \tikzset{node distance = 0.75cm and 2.0cm}
+        \node (n1) at (0,0) [block]  {Plan};
+        \node (n2) [block, below right=0.5cm and 1.5cm of n1] {Design};
+        \node (n3) [block, below left=1.5cm and 0cm of n2] {Develop};
+        \node (n5) [block, below left=0.5cm and 1.5cm of n1] {Deploy};
+        \node (n4) [block, below right=1.5cm and 0cm of n5] {Test};
+        % Connectors
+        \draw [->, thick] (n1) -- (n2);
+        \draw [->, thick] (n2) -- (n3);
+        \draw [->, thick] (n3) -- (n4);
+        \draw [->, thick] (n4) -- (n5);
+        \draw [->, thick] (n5) -- (n1);
+    \end{tikzpicture}
+    \caption{Phasen eines SDLC}
+    \label{fig:sdlc}
+\end{figure}

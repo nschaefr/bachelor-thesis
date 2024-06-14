@@ -10,7 +10,7 @@
 %!TEX spellcheck = de_DE
 %!BIB program = biber
 
-\documentclass[a4paper,12pt,numbers=noenddot,parskip,toc=flat,toc=listof,toc=bibliography,twoside=false,captions=tableheading]{scrbook}
+\documentclass[a4paper,12pt,numbers=noenddot,parskip,toc=listof,toc=bibliography,twoside=false,captions=tableheading]{scrbook}
 
 %##########################################################
 % Dokumentenangaben
@@ -82,27 +82,21 @@
 % Inhaltsverzeichnis
 %##########################################################
 \tableofcontents
-\clearpage
 
 %##########################################################
 % Abbildungsverzeichnis
 %##########################################################
 \listoffigures
-\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
-\clearpage
 
 %##########################################################
 % Tabellenverzeichnis
 %##########################################################\
 \listoftables
-\clearpage
-\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
 
 %##########################################################
 % Quelltextverzeichnis
 %##########################################################\
 \lstlistoflistings
-\clearpage
 
 %##########################################################
 % Abkürzungsverzeichnis
@@ -132,9 +126,9 @@
 \pagenumbering{Roman}
 \setcounter{page}{1}
 
-\include{Appendix/AnhangAbbildungen}
-\include{Appendix/AnhangTabellen}
-\include{Appendix/AnhangQuelltexte}
+\include{Appendix/Figures}
+\include{Appendix/Tables}
+\include{Appendix/SourceCode}
 
 % ***********************************************
 \end{document}
