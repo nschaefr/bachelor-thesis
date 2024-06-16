@@ -93,6 +93,13 @@
   url = {https://home.cse.ust.hk/~rossiter/independent_studies_projects/software_development/software_development_report.pdf}
 }
 
+@article{authorityofthehouseoflordsLargeLanguageModels,
+  title = {Large Language Models and Generative {{AI}}},
+  author = {{Authority of the House of Lords}},
+  url = {https://publications.parliament.uk/pa/ld5804/ldselect/ldcomm/54/54.pdf},
+  langid = {english},
+  file = {/home/nschaef/Zotero/storage/FAN5W9A9/Large language models and generative AI.pdf}
+}
 
 @book{cholletDeepLearningPython2018,
   title = {Deep Learning with {{Python}}},
@@ -120,6 +127,24 @@
   file = {/home/nschaef/Zotero/storage/IVT6WXL4/how-do-llm-work.html}
 }
 
+@inproceedings{duEvaluatingLargeLanguage2024,
+  title = {Evaluating {{Large Language Models}} in {{Class-Level Code Generation}}},
+  booktitle = {Proceedings of the {{IEEE}}/{{ACM}} 46th {{International Conference}} on {{Software Engineering}}},
+  author = {Du, Xueying and Liu, Mingwei and Wang, Kaixin and Wang, Hanlin and Liu, Junwei and Chen, Yixuan and Feng, Jiayi and Sha, Chaofeng and Peng, Xin and Lou, Yiling},
+  date = {2024-04-12},
+  pages = {1--13},
+  publisher = {ACM},
+  location = {Lisbon Portugal},
+  doi = {10.1145/3597503.3639219},
+  url = {https://dl.acm.org/doi/10.1145/3597503.3639219},
+  urldate = {2024-06-16},
+  abstract = {Recently, many large language models (LLMs) have been proposed, showing advanced proficiency in code generation. Meanwhile, many efforts have been dedicated to evaluating LLMs on code generation benchmarks such as HumanEval. Although being very helpful for comparing different LLMs, existing evaluation focuses on a simple code generation scenario (i.e., function-level or statement-level code generation), which mainly asks LLMs to generate one single code unit (e.g., a function or a statement) for the given natural language description. Such evaluation focuses on generating independent and often small-scale code units, thus leaving it unclear how LLMs perform in real-world software development scenarios. To fill this knowledge gap, we make the first attempt to evaluate LLMs in a more challenging code generation scenario, i.e., classlevel code generation. Compared with existing code generation benchmarks, it better reflects real-world software development scenarios due to it comprising broader contextual dependencies and multiple, interdependent units of code. We first manually construct the first class-level code generation benchmark ClassEval of 100 class-level Python code generation tasks with approximately 500 person-hours. Based on the new benchmark ClassEval, we then perform the first study of 11 state-of-the-art LLMs on class-level code generation. Based on our results, we find that all LLMs perform much worse on class-level code generation compared to the methodlevel. While GPT models still dominate other LLMs on class-level code generation, the performance rankings of other models on method-level code generation no longer holds for class-level code generation. Besides, most models (except GPT models) perform better when generating the class method by method; and they have the limited ability of generating dependent code. Based on our findings, we call for software engineering (SE) researchers’ expertise to build more LLM benchmarks based on practical and complicated software development scenarios.},
+  eventtitle = {{{ICSE}} '24: {{IEEE}}/{{ACM}} 46th {{International Conference}} on {{Software Engineering}}},
+  isbn = {9798400702174},
+  langid = {english},
+  file = {/home/nschaef/Zotero/storage/YV7KS7PU/Du et al. - 2024 - Evaluating Large Language Models in Class-Level Co.pdf}
+}
+
 @online{HowLLMsWork,
   title = {How Do {{LLMs}} Work? {{Key}} Concepts of {{Generative AI}} | {{CloudX}}},
   url = {https://cloudx.com/blog/how-do-large-language-models-work-key-concepts-of-generative-ai-you-should-know},
@@ -127,22 +152,22 @@
   file = {/home/nschaef/Zotero/storage/KBUQ8XZN/how-do-large-language-models-work-key-concepts-of-generative-ai-you-should-know.html}
 }
 
-@online{authorityofthehouseoflordsLargeLanguageModels,
-  title = {Large Language Models and Generative {{AI}}},
-  author = {{Authority of the House of Lords}},
-  url = {https://publications.parliament.uk/pa/ld5804/ldselect/ldcomm/54/54.pdf},
+@online{WeightsBiases,
+  title = {Weights \& {{Biases}}},
+  url = {https://wandb.ai/darek/llmapps/reports/A-Gentle-Introduction-to-LLM-APIs--Vmlldzo0NjM0MTMz},
+  urldate = {2024-06-16},
+  abstract = {Weights \& Biases, developer tools for machine learning},
   langid = {english},
-  file = {/home/nschaef/Zotero/storage/FAN5W9A9/Large language models and generative AI.pdf}
+  organization = {W\&B},
+  file = {/home/nschaef/Zotero/storage/LZZ97UNX/A-Gentle-Introduction-to-LLM-APIs--Vmlldzo0NjM0MTMz.html}
 }
 
-@online{morrKuNstlicheNeuronale,
+@article{morrKuenstlicheNeuronaleNetze,
   title = {Künstliche neuronale Netze},
   author = {Morr, Sebastian and Ebeling, Herr},
   langid = {ngerman},
-  file = {/home/nschaef/Zotero/storage/3E7S3C75/Morr and Ebeling - Ku¨nstliche neuronale Netze.pdf},
-  url ={https://blinry.org/knn/facharbeit-knn.pdf}
+  file = {/home/nschaef/Zotero/storage/3E7S3C75/Morr and Ebeling - Ku¨nstliche neuronale Netze.pdf}
 }
-
 
 @unpublished{muruganNaturalLanguageProcessing2024,
   title = {Natural {{Language Processing}} ({{NLP}})},
@@ -176,21 +201,94 @@
   file = {/home/nschaef/Zotero/storage/L35VZFEG/www.neuronalesnetz.de.html}
 }
 
-@online{okerlundWhatChatterbox2022,
+@article{okerlundWhatChatterbox2022,
   title = {What’s in the {{Chatterbox}}?},
   author = {Okerlund, Johanna and Klasky, Evan and Middha, Aditya and Kim, Sujin and Rosenfeld, Hannah and Kleinman, Molly and Parthasarathy, Shobita},
   date = {2022},
   langid = {english},
-  file = {/home/nschaef/Zotero/storage/Q98VZ68P/Okerlund et al. - 2022 - What’s in the Chatterbox.pdf},
-  url = {https://stpp.fordschool.umich.edu/sites/stpp/files/2022-05/large-language-models-TAP-2022-final-051622.pdf}
+  file = {/home/nschaef/Zotero/storage/Q98VZ68P/Okerlund et al. - 2022 - What’s in the Chatterbox.pdf}
 }
 
-@online{seemannKuenstlicheIntelligenzLarge,
+@online{OpenAIPlatform,
+  title = {{{OpenAI Platform}}},
+  url = {https://platform.openai.com},
+  urldate = {2024-06-16},
+  abstract = {Explore developer resources, tutorials, API docs, and dynamic examples to get the most out of OpenAI's platform.},
+  langid = {english},
+  file = {/home/nschaef/Zotero/storage/K4DX8KJM/gpt-4-turbo-and-gpt-4.html}
+}
+
+@article{seemannKuenstlicheIntelligenzLarge,
   title = {Künstliche Intelligenz, Large Language Models, ChatGPT und die Arbeitswelt der Zukunft},
   author = {Seemann, Michael},
   langid = {ngerman},
-  file = {/home/nschaef/Zotero/storage/Y7RUUTJV/Seemann - Künstliche Intelligenz, Large Language Models, Cha.pdf},
-  url = {https://www.boeckler.de/fpdf/HBS-008697/p_fofoe_WP_304_2023.pdf}
+  file = {/home/nschaef/Zotero/storage/Y7RUUTJV/Seemann - Künstliche Intelligenz, Large Language Models, Cha.pdf}
 }
 
+@online{shahandashtiEvaluatingEffectivenessGPT42024,
+  title = {Evaluating the {{Effectiveness}} of {{GPT-4 Turbo}} in {{Creating Defeaters}} for {{Assurance Cases}}},
+  author = {Shahandashti, Kimya Khakzad and Sivakumar, Mithila and Mohajer, Mohammad Mahdi and Belle, Alvine B. and Wang, Song and Lethbridge, Timothy C.},
+  date = {2024-01-31},
+  eprint = {2401.17991},
+  eprinttype = {arxiv},
+  eprintclass = {cs},
+  doi = {10.48550/arXiv.2401.17991},
+  url = {http://arxiv.org/abs/2401.17991},
+  urldate = {2024-06-16},
+  abstract = {Assurance cases (ACs) are structured arguments that support the verification of the correct implementation of systems' non-functional requirements, such as safety and security, thereby preventing system failures which could lead to catastrophic outcomes, including loss of lives. ACs facilitate the certification of systems in accordance with industrial standards, for example, DO-178C and ISO 26262. Identifying defeaters arguments that refute these ACs is essential for improving the robustness and confidence in ACs. To automate this task, we introduce a novel method that leverages the capabilities of GPT-4 Turbo, an advanced Large Language Model (LLM) developed by OpenAI, to identify defeaters within ACs formalized using the Eliminative Argumentation (EA) notation. Our initial evaluation gauges the model's proficiency in understanding and generating arguments within this framework. The findings indicate that GPT-4 Turbo excels in EA notation and is capable of generating various types of defeaters.},
+  pubstate = {preprint},
+  keywords = {Computer Science - Software Engineering},
+  file = {/home/nschaef/Zotero/storage/Q9337LDB/Shahandashti et al. - 2024 - Evaluating the Effectiveness of GPT-4 Turbo in Cre.pdf;/home/nschaef/Zotero/storage/6NNB5FA9/2401.html}
+}
 
+@article{yaoSurveyLargeLanguage2024,
+  title = {A Survey on Large Language Model ({{LLM}}) Security and Privacy: {{The Good}}, {{The Bad}}, and {{The Ugly}}},
+  shorttitle = {A Survey on Large Language Model ({{LLM}}) Security and Privacy},
+  author = {Yao, Yifan and Duan, Jinhao and Xu, Kaidi and Cai, Yuanfang and Sun, Zhibo and Zhang, Yue},
+  date = {2024-06-01},
+  journaltitle = {High-Confidence Computing},
+  shortjournal = {High-Confidence Computing},
+  volume = {4},
+  number = {2},
+  pages = {100211},
+  issn = {2667-2952},
+  doi = {10.1016/j.hcc.2024.100211},
+  url = {https://www.sciencedirect.com/science/article/pii/S266729522400014X},
+  urldate = {2024-06-16},
+  abstract = {Large Language Models (LLMs), such as ChatGPT and Bard, have revolutionized natural language understanding and generation. They possess deep language comprehension, human-like text generation capabilities, contextual awareness, and robust problem-solving skills, making them invaluable in various domains (e.g., search engines, customer support, translation). In the meantime, LLMs have also gained traction in the security community, revealing security vulnerabilities and showcasing their potential in security-related tasks. This paper explores the intersection of LLMs with security and privacy. Specifically, we investigate how LLMs positively impact security and privacy, potential risks and threats associated with their use, and inherent vulnerabilities within LLMs. Through a comprehensive literature review, the paper categorizes the papers into “The Good” (beneficial LLM applications), “The Bad” (offensive applications), and “The Ugly” (vulnerabilities of LLMs and their defenses). We have some interesting findings. For example, LLMs have proven to enhance code security (code vulnerability detection) and data privacy (data confidentiality protection), outperforming traditional methods. However, they can also be harnessed for various attacks (particularly user-level attacks) due to their human-like reasoning abilities. We have identified areas that require further research efforts. For example, Research on model and parameter extraction attacks is limited and often theoretical, hindered by LLM parameter scale and confidentiality. Safe instruction tuning, a recent development, requires more exploration. We hope that our work can shed light on the LLMs’ potential to both bolster and jeopardize cybersecurity.},
+  keywords = {ChatGPT,Large Language Model (LLM),LLM attacks,LLM privacy,LLM security,LLM vulnerabilities},
+  file = {/home/nschaef/Zotero/storage/RSYZ4GBK/Yao et al. - 2024 - A survey on large language model (LLM) security an.pdf;/home/nschaef/Zotero/storage/7HNS82XZ/S266729522400014X.html}
+}
+
+@online{yeComprehensiveCapabilityAnalysis2023,
+  title = {A {{Comprehensive Capability Analysis}} of {{GPT-3}} and {{GPT-3}}.5 {{Series Models}}},
+  author = {Ye, Junjie and Chen, Xuanting and Xu, Nuo and Zu, Can and Shao, Zekai and Liu, Shichun and Cui, Yuhan and Zhou, Zeyang and Gong, Chao and Shen, Yang and Zhou, Jie and Chen, Siming and Gui, Tao and Zhang, Qi and Huang, Xuanjing},
+  date = {2023-12-23},
+  eprint = {2303.10420},
+  eprinttype = {arxiv},
+  eprintclass = {cs},
+  doi = {10.48550/arXiv.2303.10420},
+  url = {http://arxiv.org/abs/2303.10420},
+  urldate = {2024-06-16},
+  abstract = {GPT series models, such as GPT-3, CodeX, InstructGPT, ChatGPT, and so on, have gained considerable attention due to their exceptional natural language processing capabilities. However, despite the abundance of research on the difference in capabilities between GPT series models and fine-tuned models, there has been limited attention given to the evolution of GPT series models' capabilities over time. To conduct a comprehensive analysis of the capabilities of GPT series models, we select six representative models, comprising two GPT-3 series models (i.e., davinci and text-davinci-001) and four GPT-3.5 series models (i.e., code-davinci-002, text-davinci-002, text-davinci-003, and gpt-3.5-turbo). We evaluate their performance on nine natural language understanding (NLU) tasks using 21 datasets. In particular, we compare the performance and robustness of different models for each task under zero-shot and few-shot scenarios. Our extensive experiments reveal that the overall ability of GPT series models on NLU tasks does not increase gradually as the models evolve, especially with the introduction of the RLHF training strategy. While this strategy enhances the models' ability to generate human-like responses, it also compromises their ability to solve some tasks. Furthermore, our findings indicate that there is still room for improvement in areas such as model robustness.},
+  pubstate = {preprint},
+  keywords = {Computer Science - Computation and Language},
+  file = {/home/nschaef/Zotero/storage/JXPCYH54/Ye et al. - 2023 - A Comprehensive Capability Analysis of GPT-3 and G.pdf;/home/nschaef/Zotero/storage/LQG4B8XQ/2303.html}
+}
+
+@online{yenduriGenerativePretrainedTransformer2023,
+  title = {Generative {{Pre-trained Transformer}}: {{A Comprehensive Review}} on {{Enabling Technologies}}, {{Potential Applications}}, {{Emerging Challenges}}, and {{Future Directions}}},
+  shorttitle = {Generative {{Pre-trained Transformer}}},
+  author = {Yenduri, Gokul and M, Ramalingam and G, Chemmalar Selvi and Y, Supriya and Srivastava, Gautam and Maddikunta, Praveen Kumar Reddy and G, Deepti Raj and Jhaveri, Rutvij H. and B, Prabadevi and Wang, Weizheng and Vasilakos, Athanasios V. and Gadekallu, Thippa Reddy},
+  date = {2023-05-21},
+  eprint = {2305.10435},
+  eprinttype = {arxiv},
+  eprintclass = {cs},
+  doi = {10.48550/arXiv.2305.10435},
+  url = {http://arxiv.org/abs/2305.10435},
+  urldate = {2024-06-16},
+  abstract = {The Generative Pre-trained Transformer (GPT) represents a notable breakthrough in the domain of natural language processing, which is propelling us toward the development of machines that can understand and communicate using language in a manner that closely resembles that of humans. GPT is based on the transformer architecture, a deep neural network designed for natural language processing tasks. Due to their impressive performance on natural language processing tasks and ability to effectively converse, GPT have gained significant popularity among researchers and industrial communities, making them one of the most widely used and effective models in natural language processing and related fields, which motivated to conduct this review. This review provides a detailed overview of the GPT, including its architecture, working process, training procedures, enabling technologies, and its impact on various applications. In this review, we also explored the potential challenges and limitations of a GPT. Furthermore, we discuss potential solutions and future directions. Overall, this paper aims to provide a comprehensive understanding of GPT, enabling technologies, their impact on various applications, emerging challenges, and potential solutions.},
+  pubstate = {preprint},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computation and Language},
+  file = {/home/nschaef/Zotero/storage/NMJXLXDM/Yenduri et al. - 2023 - Generative Pre-trained Transformer A Comprehensiv.pdf;/home/nschaef/Zotero/storage/NILKKBFW/2305.html}
+}
