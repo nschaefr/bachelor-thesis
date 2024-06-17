@@ -3,32 +3,32 @@
     \tikzstyle{block} = [rectangle, draw, text width=5em, text centered, rounded corners, minimum height=3em, font=\small]
     \begin{tikzpicture}
         \tikzset{node distance = 0.75cm and 2.0cm}
-        \node (n1) at (0,0) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em]  {Es ist};
+        \node (n1) at (0,0) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em]  {\colorbox{gray!25}{Es}};
         \node (n2) [block, above=of n1] {Wahrscheinlichkeitsverteilung};
         \node (n3) [block, above=of n2] {Sampling Strategy};
-        \node (n4) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, above=of n3] {ein};
-        \node (n5) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n1] {Es ist ein};
+        \node (n4) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, above=of n3] {\colorbox{gray!25}{ist}};
+        \node (n5) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n1] {\colorbox{gray!25}{Es ist}};
         \node (n6) [block, right=of n2] {Wahrscheinlichkeitsverteilung};
         \node (n7) [block, right=of n3] {Sampling Strategy};
-        \node (n8) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n4] {schöner};
-        \node (n9) [text width=5em, text centered, right=of n5] {Es ist ein schöner};
+        \node (n8) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n4] {\colorbox{gray!25}{ein}};
+        \node (n9) [text width=5em, text centered, right=of n5] {\colorbox{gray!25}{Es ist ein}};
         \node (n10) [block, right=of n6] {Wahrscheinlichkeitsverteilung};
         \node (n11) [block, right=of n7] {Sampling Strategy};
-        \node (n12) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n8] {Tag};
+        \node (n12) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n8] {\colorbox{gray!25}{schöner}};
         % Connectors
         \draw [->, thick] (n1) -- (n2);
         \draw [->, thick] (n2) -- (n3);
         \draw [->, thick] (n3) -- (n4);
-        \draw [->, thick] ($(n4.east) + (-0.5,0)$) -| ($(n4.east) + (1.0,0)$) |- ($(n5.west) - (1.0,0)$) -- (n5);
+        \draw [->, thick] ($(n4.east) - (0.35,0)$) -| ($(n4.east) + (1.0,0)$) |- ($(n5.west) - (1.0,0)$) -- (n5);
         \draw [->, thick] (n5) -- (n6);
         \draw [->, thick] (n6) -- (n7);
         \draw [->, thick] (n7) -- (n8);
-        \draw [->, thick] (n8) -| ($(n8.east) + (1.0,0)$) |- ($(n9.west) - (1.0,0)$) -- (n9);
+        \draw [->, thick] ($(n8.east) - (0.35,0.0)$) -| ($(n8.east) + (1.0,0)$) |- ($(n9.west) - (1.0,0)$) -- (n9);
         \draw [->, thick] (n9) -- (n10);
         \draw [->, thick] (n10) -- (n11);
         \draw [->, thick] (n11) -- (n12);
-        \draw [->, thick] ($(n12.east) + (-0.5,0)$) -- ($(n12.east) + (1.0,0)$);
-        \draw [->, thick] (n1) -- (n5);
+        \draw [->, thick] ($(n12.east) + (-0.25,0)$) -- ($(n12.east) + (0.5,0)$);
+        \draw [->, thick] ($(n1.east) - (0.35,0)$) -- (n5);
         \draw [->, thick] (n5) -- (n9);
     \end{tikzpicture}
     \caption{Wordgenerierung in LLMs}

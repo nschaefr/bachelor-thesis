@@ -1,0 +1,32 @@
+\begin{figure}[ht]
+    \vspace{.5cm}
+    \centering
+    \tikzstyle{block} = [rectangle, draw, text width=7.5em, text centered, align=center, inner sep=1ex, rounded corners, font=\small]
+    \begin{tikzpicture}
+        \tikzset{node distance = 0.75cm and 1.5cm}
+        % Main node with embedded tikzpicture
+        \node (n1) at (0,0) [block, minimum height=4em, text depth=0.5em, inner sep=1ex] {
+            \begin{tikzpicture}[node distance=0.25cm]
+                \node (n1a) [minimum height=1.5em, inner sep=1ex] {\textbf{Prompt}};
+                \node (n1b) [block, text width=6em, minimum height=1.5em, inner sep=1ex, below=of n1a] {Anweisung};
+                \node (n1c) [block, below=of n1b, text width=6em, minimum height=1.5em, inner sep=1ex] {Kontext};
+                \node (n1d) [block, below=of n1c, text width=6em, minimum height=1.5em, inner sep=1ex] {Eingabedaten};
+                \node (n1e) [block, below=of n1d, text width=6em, minimum height=1.5em, inner sep=1ex] {Ausgabeindikator};
+            \end{tikzpicture}
+        };
+        \node (n2) [block, minimum height=4em, text depth=0em, inner sep=2ex, right=of n1] {
+            \begin{tikzpicture}[node distance=1.25cm]
+                \node (n2a) [block, text width=4em, minimum height=1.5em, inner sep=1ex] {\textbf{LLM}};
+                \node (n2b) [block, text width=4em, minimum height=1.5em, inner sep=1ex, below=of n2a] {training on parameters};
+                \draw [->, thick, dashed] ($(n2a.south) - (0.8,0.0)$) -- ($(n2b.north) - (0.8,0.0)$);
+                \draw [->, thick, dashed] ($(n2b.north) + (0.8,0.0)$) -- ($(n2a.south) + (0.8,0.0)$);
+            \end{tikzpicture}
+        };
+        \node (n3) [block, right=of n2] {Ausgabe};
+        % Connectors
+        \draw [->, thick] (n1) -- (n2);
+        \draw [->, thick] (n2) -- (n3);
+    \end{tikzpicture}
+    \caption{\textit{Prompt Engineering} Prozess }
+    \label{fig:prompt-eng}
+\end{figure}
