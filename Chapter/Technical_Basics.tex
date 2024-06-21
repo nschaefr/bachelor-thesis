@@ -42,6 +42,7 @@ Das \textit{Prompt-Engineering} spiegelt eine Technik zur Verbesserung der Fähi
 \subsection{Prompt Elemente}
 Der Aufbau eines Promptes besteht aus folgenden Elementen [Abb. \ref{fig:prompt-eng}]:
 \begin{itemize}
+    \setlength{\parskip}{1pt}
     \item \textbf{Anweisung} - eine Anweisung, die das Modell ausführen soll
     \item \textbf{Kontext} - Zusatzkontext, der das Modell zu besseren Antworten lenken kann
     \item \textbf{Eingabedaten} - die Eingabe, für die eine Antwort gefunden werden soll
@@ -58,5 +59,60 @@ Wie in vorherigen Kapiteln beschrieben, werden Sprachmodelle wie GPT-3.5-turbo o
 Zusammenfassend lässt sich sagen, dass \textit{Prompt Engineering} Anweisungen nutzt, die ein \textit{fine tuning} der Leistung von vortrainierten LLM's basierend auf spezifischen \textit{Prompts} ermöglicht, und somit die Vielseitigkeit und Anwendung in unterschiedlichen Bereichen verbessert. \cite*{sahooSystematicSurveyPrompt2024}
 
 \section{Unit Testing}
+Ein Hauptproblem im Softwareentwicklungszyklus ist häufig die fehlende Zeit, um ein komplettes Projekt vor dem \textit{Release} manuell zu testen. \cite*{SoftwareQualityLab} Eine Lösungsvariante für diese Art von Problemstellungen bieten \textit{Unit-Tests}. 
 
+\subsection{Grundlagen}
+\textit{Unit-Tests} werden von Entwicklern geschrieben, um eine bestimmte Funktionalität in einem Ausschnitt des Codes zu testen. Somit wird es ermöglicht problematische Bereiche im Code offenzulegen und Fehler zu reduzieren. \cite*{tosunEffectivenessUnitTests2018} Die Tests werden in der gleichen Programmiersprache geschrieben wie der Produktionscode und bilden die Basis der Testing Pyramide (Abb. \ref{fig:pyramid}). \input{Assets/LaTeX/Pyramid.tex}Idealerweise werden sie häufig und automatisiert durchgeführt, um sicherzustellen, dass neue Änderungen die bisherig bestehende Funktionalität nicht zerstören. \cite*{TestingPyramidStrategic2024}\\
+Der Prozess des \textit{Unit-Testing} besteht aus grundlegend 4 Phasen. Die \textbf{Planung} dient zur Überlegung und Analyse, um entscheiden zu können welche Codeeinheiten getestet werden müssen. Dabei ist es essenziell alle relevanten Funktionen der Einheiten abzudecken. \cite*{bakharevUnitTestingDefinition2023} Die zweite Phase dient zum \textbf{Schreiben der Testfälle}, in der ein Skript angefertigt und Code für den \textit{Unit-Test} geschrieben wird. \cite*{bakharevUnitTestingDefinition2023} Beim \textbf{Ausführen} der Tests wird erkennbar, wie sich der Programmcode bei jedem Testfall verhält und eine \textbf{Analyse} ermöglicht, in der Fehler und Probleme im Code erkannt und behoben werden können.\cite*{bakharevUnitTestingDefinition2023}\\\\
+Der \textit{Unit-Test} selbst, basiert meist auf einem 3A-Pattern: Arrange, Act, Assert. \\\textbf{Arrange} initialisiert die benötigen Objekte und setzt, wenn verlangt, \textit{mocks} (engl. Attrappen) um einen Platzhalter oder eine Attrappe für ein Objekt bereitzustellen.\\ Der \textbf{Act}-Abschnitt ruft die zu testende Funktion mit den im vorherigen Schritt initialisierten Objekten auf und mithilfe des \textbf{Assert}-Abschnitts wird überprüft, dass sich die Funktion wie erwartet verhält. \cite*{ikechiHowStructureUnit2021} [Quellcode \ref{lst:java-method-example} und \ref{lst:java-unit-example}]\\
+\lstinputlisting[caption=Java-Methode Beispiel,captionpos=b,label={lst:java-method-example},language=Java]{Assets/Code/Example-Func.java}
+\vspace{2cm}
+\lstinputlisting[caption=Unit-Test Beispiel,captionpos=b,label={lst:java-unit-example},language=Java]{Assets/Code/Example-Unit.java} Somit sind \textit{Unit-Tests} eine wichtige Maßnahme zur Qualitätssicherung und ermöglichen das frühzeitige Finden und Beheben von Fehlern.
 
+\subsection{Java mit JUnit5}
+JUnit ist ein Unit-Testing-Framework, welches zum Testen in Java Anwendungen verwendet wird. Die aktuellste Version des \textit{Frameworks} ist \textit{JUnit5}, das eine moderne Grundlage für Entwickler-seitige Tests bietet. \cite*{JUnit} JUnit5 unterstützt die automatisierte Durchführung von Tests und trägt somit zur Effizienzsteigerung aus Sicht des Entwicklungsprozesses bei. \cite*{venkatesanJunitFrameworkUnit} Es werden Werkzeuge und nützliche \textit{Features} zur Verfügung gestellt, um das Implementieren von Testfällen zuverlässiger und schneller zu gestalten. Einige der wichtigsten und am häufigsten verwendeten \textit{Features} sind dabei Annotationen, Testklassen und Assertions (engl. Behauptungen). \cite*{venkatesanJunitFrameworkUnit}\\
+Annotationen sind \textit{Tags}, welche zunächst dem Java-Code hinzugefügt werden, um die Lesbarkeit und Struktur des Programmcodes zu verbessern. Ebenso definieren sie die Reihenfolge von Codeteilen innerhalb des Tests. Einige Beispielannotationen sind: \cite*{JUnitUserGuide}
+\begin{itemize}
+    \setlength{\parskip}{1pt}
+    \item \textbf{@Test} - zeigt, dass eine Methode eine Testmethode ist
+    \item \textbf{@BeforeEach} - legt fest, dass die Methode vor jedem @Test ausgeführt wird
+    \item \textbf{@AfterAll} - legt fest, dass die Methode nach allen @Test ausgeführt wird
+\end{itemize}
+Testklassen können mehrere Testmethoden beinhalten, was ein Ausführen von mehr als einer Testmethode vereinfacht und für strukturelle Vorteile wie die Lesbarkeit innerhalb des Projektes sorgt. Quellcode \ref{lst:java-class-example} zeigt ein Beispiel:\\
+\lstinputlisting[caption=Testklasse Beispiel,captionpos=b,label={lst:java-class-example},language=Java]{Assets/Code/Example-Class.java}
+Assertions finden in der Praxis häufig Anwendung und stellen weitere nützliche Methoden zum Schreiben von Testfällen dar. Einige der wichtigsten Methoden demonstriert Quellcode \ref{lst:assertions-example}.\\
+\lstinputlisting[caption=Assertion-Methoden,captionpos=b,label={lst:assertions-example},language=Java]{Assets/Code/Assertions.java}
+Die einfachste Möglichkeit JUnit5 einzurichten, ist die Verwendung von \textit{Apache Maven}. Hierbei handelt es sich um ein weit verbreitetes Build-Automation-Tool für Java-Anwendungen. Zur Einrichtung reicht ein einfaches Hinzufügen der JUnit-Dependency zum \textit{Project Object Model} (engl. kurz POM) in der pom.xml. \cite*{baeldungGuideJUnitBaeldung2016}
+
+\section{SonarQube}
+In den vorherigen Kapiteln wurde deutlich, dass eine Testabdeckung des Projekts mit \textit{Unit-Tests} ein entscheidender Faktor für die Qualität des Programmcodes ist. Allerdings stellt sich die Frage, anhand welcher Kriterien sich die Qualität der Tests beurteilen lässt und wie sichergestellt werden kann, dass der Testcode die Anwendung tatsächlich umfassenden abdeckt. Ein solches selbst verwaltendes und automatisches Code-Review-Tool stellt SonarQube bereit. Dabei lässt es sich in den bestehenden Arbeitsablauf integrieren und erkennt Probleme im Programmcode sowie im Testcode. \cite*{SonarQube10} Des Weiteren werden Metriken bereitgestellt, die eine Bewertung des eigenen Testcodes ermöglichen und dadurch eine Einschätzung der Abdeckung der Anwendung zulassen.\\\\
+Eine erste entscheidende Metrik ist die \textbf{Code Coverage} (engl. Codeabdeckung) der Tests. Anhand dieser \textit{Coverage} lässt sich die Frage beantworten, wie viel des Quellcodes durch \textit{Unit-Tests} abgedeckt wurde. Durch folgende Gleichung lässt sich eine Abdeckung in \% berechnen \cite*{MetricDefinition}:\\\\
+$Coverage = \frac{(CT + CF + LC)}{2 \cdot B + EL}$
+\begin{itemize}
+    \setlength{\parskip}{1pt}
+    \item CT - Bedingungen, die mindestens einmal als \textit{true} ausgewertet wurden
+    \item CF - Bedingungen, die mindestens einmal als \textit{false} ausgewertet wurden
+    \item LC - abgedeckte Quellcodezeilen
+    \item B - Gesamtzahl an Bedingungen
+    \item EL - Gesamtzahl an ausführbaren Quellcodezeilen
+\end{itemize}
+Im Allgemeinen wird eine Codeabdeckung durch \textit{Unit-Tests} von 60\% - 90\% angestrebt. \cite*{WhatReasonableCode}\\
+Eine weitere Metrik, die zur \textit{Code Coverage} beiträgt, ist die \textbf{Condtion Coverage} oder auch \textbf{Branch Coverage} (engl. Bedingungs-/Zweigabdeckung). Hierbei wird zu jeder Quellcodezeile, die eine Verzweigung enthälgt, überprüft, ob der Ausdruck einmal für \textit{true} und einmal für \textit{false} ausgewertet wurde. Durch folgende Gleichung wird ein Ergebnis in \% ausgegeben \cite*{MetricDefinition}:\\\\
+$Condition Coverage = \frac{(CT + CF)}{2 \cdot B}$
+\begin{itemize}
+    \setlength{\parskip}{1pt}
+    \item CT - Bedingungen, die mindestens einmal als \textit{true} ausgewertet wurden
+    \item CF - Bedingungen, die mindestens einmal als \textit{false} ausgewertet wurden
+    \item B - Gesamtzahl an Bedingungen
+\end{itemize}
+Die \textbf{Line Coverage} stellt ebenso ein Bestandteil der \textit{Code Coverage} dar und gibt an, wie viel \% der Quellcodezeilen durch die Tests ausgeführt werden \cite*{MetricDefinition}:\\\\
+$Line Coverage = \frac{LC}{EL}$
+\begin{itemize}
+    \setlength{\parskip}{1pt}
+    \item LC - abgedeckte Quellcodezeilen
+    \item EL - Gesamtzahl an ausführbaren Quellcodezeilen
+\end{itemize}
+Wichtig ist, die Erfolgsquote der Tests auszuwerten. Dazu wird die Gesamtzahl der \textit{Unit-Tests} benötigt, um eine Quote angeben zu können. Man unterscheidet für die Berechnung zwischen \textit{Errors} und \textit{Failures}. Bei einem \textit{Unit-Test Error} handelt es sich um einen Kompilierfehler wohingegen es sich bei einem \textit{Unit-Test Failure} um ein Fehlschlagen des Testfalls (bspw. bei einer falschen \textit{Assertion}) handelt. Die Quote selber, lässt sich wie folgt berechnen \cite*{MetricDefinition}:\\\\
+$Success = \frac{(Tests - (Errors + Failures))}{Tests \cdot 100}$\\\\
+Durch die oben genannten Metriken, lässt sich die Qualität der \textit{Unit-Tests} aus verschiedenen Blickwinkeln evaluieren.\\\\
+Eine ausführliche Analyse benötigt eine Auswertung an sowohl simplen bis hin zu komplexen Projekten. SonarQube stellt mit der \textbf{Complexity} oder auch \textbf{Cyclomatic Complexity} (engl. zyklomatische Komplexität) eine Metrik bereit, welche für eine spezifische Sprache die Komplexität berechnet. Diese wird durch die Anzahl \textit{function splits} (engl. Funktionsaufteilungen) definiert. Für die Programmiersprache Java erhöht sich die Komplexität somit bei jedem \colorbox{gray!20}{if}, \colorbox{gray!20}{for}, \colorbox{gray!20}{while}, \colorbox{gray!20}{case}, \colorbox{gray!20}{\&\&}, \colorbox{gray!20}{||}, \colorbox{gray!20}{?} und \colorbox{gray!20}{->}. \cite*{MetricDefinition}
