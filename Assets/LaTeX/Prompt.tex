@@ -1,0 +1,29 @@
+\pgfplotstableread[row sep=\\,col sep=&]{
+    Prompt & Value \\
+    Zero Shot & 59.39 \\
+    One Shot & 63.42 \\
+    }\mydata
+
+\begin{figure}[ht]
+    \vspace{0.3cm}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            width=6cm,  % Adjust the width
+            height=6cm,  % Adjust the height
+            symbolic x coords={Zero Shot, One Shot},
+            xtick=data,
+            ymin=50,  % Set y axis minimum value
+            ymax=70,  % Set y axis maximum value
+            bar width=20pt,  % Adjust bar width
+            nodes near coords,  % Display values on top of bars
+            ylabel={Coverage (\%)},
+            enlarge x limits=0.5,  % Reduce the space around the bars
+        ]
+        \addplot table[x=Prompt,y=Value]{\mydata};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Einfluss des Prompts auf die Coverage}
+    \label{fig:prompt}
+\end{figure}
