@@ -1,0 +1,30 @@
+\pgfplotstableread[row sep=\\,col sep=&]{
+    GPT & MMLU \\
+    GPT-4o & 88.7 \\
+    GPT-4T & 86.5 \\
+    GPT-4 & 86.4 \\
+    }\mydata
+
+\begin{figure}[ht]
+    \vspace{0.3cm}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            width=8.5cm,  % Adjust the width
+            height=6cm,  % Adjust the height
+            symbolic x coords={GPT-4o, GPT-4T, GPT-4},
+            xtick=data,
+            ymin=85,  % Set y axis minimum value
+            ymax=90,  % Set y axis maximum value
+            bar width=20pt,  % Adjust bar width
+            nodes near coords,  % Display values on top of bars
+            ylabel={MMLU (\%)},
+            enlarge x limits=0.5,  % Reduce the space around the bars
+        ]
+        \addplot table[x=GPT,y=MMLU]{\mydata};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{MMLU-Vergleich der GPT-Modelle}
+    \label{fig:gpt-comp}
+\end{figure}

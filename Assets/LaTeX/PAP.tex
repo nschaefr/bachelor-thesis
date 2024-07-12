@@ -1,0 +1,63 @@
+\tikzset{decision/.style = {diamond, draw, fill=yellow!20, 
+		text width=4em, text centered, node distance=3cm, inner sep=0pt},
+	block/.style = {rectangle, draw, fill=blue!20, 
+		text width=5em, minimum width=3em, text centered, rounded corners, minimum height=3.5em},
+	line/.style = {draw, -latex'},
+	cloud/.style = {draw, ellipse,fill=red!20, node distance=1cm,
+  		minimum height=2em},
+	process/.style = {rectangle, draw, fill=green!20, 
+		text width=5em, text centered, rounded corners, minimum height=2em},
+	every node/.append style = {font=\small}}
+
+\begin{figure}[H]
+	\vspace{.3cm}
+    \centering
+    \begin{tikzpicture}[node distance = 1cm, auto]
+        % Place nodes
+        \node [cloud] (start) {\textbf{Start}};
+        \node [block, right of=start, node distance=3cm] (init) {Init von Temperatur/Prompt};
+		\node [block, right of=init, node distance=3cm] (get) {Erfasse Java-Dateien im Projekt};
+		\node [decision, below of=get, node distance=3cm, fill=green!20] (vor) {vorhanden?};
+		\node [block, below of=init, node distance=3cm] (extr) {Extrahieren aller Infos};
+		\node [cloud, right of=vor, node distance=2.75cm] (stop) {\textbf{Stop}};
+		\node [block, left of=extr, node distance=3cm] (api) {API-Anfrage für Testgenerierung};
+		\node [decision, below of=api, node distance=2.5cm, fill=green!20] (comp) {kompilierbar?};
+		\node [block, below of=comp, node distance=2.5cm] (direct) {Ablegen in Testpfad};
+		\node [block, right of=comp, node distance=2.5cm, text width=2.5em] (i) {$i=1$};
+		\node [block, right of=i, node distance=2.5cm] (repair) {API-Anfrage zum Reparieren};
+		\node [decision, below of=repair, node distance=2.5cm, fill=green!20] (comp1) {kompilierbar?};
+		\node [block, right of=comp1, node distance=2.75cm, text width=3.5em] (incr) {$i=i+1$};
+		\node [decision, right of=incr, node distance=2.5cm, fill=green!20] (less) {$i\leq2?$};
+		\node [block, below of=less, node distance=2.25cm] (apidel) {API-Anfrage zum Löschen};
+		\node [decision, below of=apidel, node distance=2.5cm, fill=green!20] (comp2) {kompilierbar?};
+		\node [block, left of=comp2, node distance=3.25cm] (del) {Löschen};
+		\node [decision, below of=direct, node distance=2.5cm, fill=green!20] (file) {\footnotesize{weitere Datei?}\vspace{.1cm}};
+		\node [cloud, below of=file, node distance=2.25cm] (end) {\textbf{Stop}};
+
+		\path [line] (start) -- (init);
+		\path [line] (init) -- (get);
+		\path [line] (vor) -- node [pos=0.4] {N} (stop);
+		\path [line] (get) -- (vor);
+		\path [line] (vor) -- node [pos=0.4] {J} (extr);
+		\path [line] (extr) -- (api);
+		\path [line] (api) -- (comp);
+		\path [line] (comp) -- node [pos=0.4] {J} (direct);
+		\path [line] (comp) -- node [pos=0.4] {N} (i);
+		\path [line] (i) -- (repair);
+		\path [line] (repair) -- (comp1);
+		\path [line] (comp1) -- node [pos=0.4] {J} (direct);
+		\path [line] (comp1) -- node [pos=0.4] {N} (incr);
+		\path [line] (incr) -- (less);
+		\path [line] (less) -- node [pos=0.4] {J} ($(less.north) + (0.0cm, 1.25cm)$) |- ($(repair.east)$);
+		\path [line] (less) -- node [pos=0.4] {N} (apidel);
+		\path [line] (apidel) -- (comp2);
+		\path [line] ($(comp2.south)$) -- ($(comp2.south) + (0.0cm, -0.05cm)$) |- node {J} ($(comp2.south) + (-12.0875cm, -0.05cm)$) |- (direct);
+		\path [line] (comp2) -- node [pos=0.4] {N} (del);
+		\path [line] (direct) -- (file);
+		\path [line] (file) -- node [pos=0.4] {N} (end);
+		\path [line] ($(del.north)$) -- ($(del.north) + (0.0cm, 1.25cm)$) |- ($(file.east)$);
+		\path [line] ($(file.west)$) -- node [pos=0.4] {J} ($(file.west) + (-0.58cm, 0.0cm)$) |- ($(api.west) + (-0.58cm, 1.245cm)$) |- ($(extr.north) + (0.0cm,0.5cm)$) -| (extr);
+    \end{tikzpicture}
+    \caption{Programmablaufplan von \textit{Unitcraft}}
+	\label{fig:pap}
+\end{figure}
