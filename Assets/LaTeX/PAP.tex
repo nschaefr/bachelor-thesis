@@ -7,7 +7,9 @@
   		minimum height=2em},
 	process/.style = {rectangle, draw, fill=green!20, 
 		text width=5em, text centered, rounded corners, minimum height=2em},
-	every node/.append style = {font=\small}}
+	input/.style = {trapezium, trapezium left angle=75, trapezium right angle=105, draw, fill=orange!20, 
+		text width=5em, text centered, minimum height=2em},
+		every node/.append style = {font=\small},}
 
 \begin{figure}[H]
 	\vspace{.3cm}
@@ -15,8 +17,8 @@
     \begin{tikzpicture}[node distance = 1cm, auto]
         % Place nodes
         \node [cloud] (start) {\textbf{Start}};
-        \node [block, right of=start, node distance=3cm] (init) {Init von Temperatur/Prompt};
-		\node [block, right of=init, node distance=3cm] (get) {Erfasse Java-Dateien im Projekt};
+        \node [input, right of=start, node distance=3cm] (init) {Eingabe von T/Prompt-Technik};
+		\node [block, right of=init, node distance=3.5cm] (get) {Erfasse Java-Dateien im Projekt};
 		\node [decision, below of=get, node distance=3cm, fill=green!20] (vor) {vorhanden?};
 		\node [block, below of=init, node distance=3cm] (extr) {Extrahieren aller Infos};
 		\node [cloud, right of=vor, node distance=2.75cm] (stop) {\textbf{Stop}};
