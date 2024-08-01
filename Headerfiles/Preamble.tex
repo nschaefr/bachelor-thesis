@@ -71,6 +71,30 @@
 %##########################################################
 
 \usepackage{listings}
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12} 
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\lstset{basicstyle=\ttfamily\linespread{0.6}\selectfont}
+\lstdefinelanguage{XML}
+{
+  basicstyle=\ttfamily\small\linespread{0.9}\selectfont,  
+  morestring=[s]{"}{"},
+  morecomment=[s]{?}{?},
+  morecomment=[s]{!--}{--},
+  commentstyle=\color{darkgreen},
+  moredelim=[s][\color{black}]{>}{<},
+  moredelim=[s][\color{red}]{\ }{=},
+  stringstyle=\color{blue},
+  identifierstyle=\color{maroon},
+  abovecaptionskip=6pt
+}
+\lstdefinelanguage{bash}
+{
+  basicstyle=\ttfamily\small\linespread{0.9}\selectfont,
+  abovecaptionskip=6pt
+}
 \usepackage{scrhack}
 \usepackage{microtype}
 \usepackage{acro}
@@ -90,7 +114,7 @@
 }
 
 \lstdefinestyle{MyStyle}{
-	basicstyle=\footnotesize\sffamily,
+	basicstyle=\ttfamily\small\linespread{0.9}\selectfont,
 	keywordstyle=\color{blue},
 	commentstyle=\color{codegreen},
 	stringstyle=\color{orange!80!black},
@@ -113,6 +137,7 @@
 	xleftmargin=0.03\linewidth,
 	xrightmargin=0.01\linewidth,
 	inputencoding=utf8,
+  abovecaptionskip=6pt
 }
 
 \lstset{
