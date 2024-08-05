@@ -9,10 +9,8 @@ public class CalculatorTest {
         int a = 5;
         int b = 3;
         int expectedResult = 8;
-
         int result = calculator.add(a, b);
-
-        assertEquals(expectedResult, result, "The add method should add two integers correctly");
+        assertEquals(expectedResult, result, "should add 2 int");
     }
 
     @Test
@@ -20,9 +18,7 @@ public class CalculatorTest {
         int a = 5;
         int b = 3;
         int expectedResult = 2;
-
         int result = calculator.subtract(a, b);
-
-        assertEquals(expectedResult, result, "The subtract method should subtract two integers correctly");
+        assertEquals(expectedResult, result, "should subtract 2 int");
     }
 }

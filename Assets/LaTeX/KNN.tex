@@ -42,8 +42,8 @@
         \foreach \j in {1,...,2}
             \draw [->] (hidden-\i) -- (output-\j);
 
-        \foreach \l [count=\x from 0] in {Input, Hidden, Ouput}
-            \node [align=center, above] at (\x*2,2) {\l \\ layer};
+        \foreach \l [count=\x from 0] in {\textit{Input}, \textit{Hidden}, \textit{Ouput}}
+            \node [align=center, above] at (\x*2,2) {\l \\ \textit{layer}};
     \end{tikzpicture}
     \caption{Grundlegender Aufbau eines KNN}
     \label{fig:knn}

@@ -64,11 +64,6 @@
 %\include{Formalien/Sperrvermerk}
 
 %##########################################################
-% Eidesstaatliche Erklärung
-%##########################################################
-%\include{Formalities/EidesstaatlicheErklaerung}
-
-%##########################################################
 % Vorwort (optional)
 %##########################################################
 %\include{Formalities/Vorwort}
@@ -76,7 +71,7 @@
 %##########################################################
 % Abstract/Kurzfassung
 %##########################################################
-%\include{Formalities/Kurzfassung}
+\include{Formalities/Abstract}
 
 %##########################################################
 % Inhaltsverzeichnis
@@ -130,11 +125,6 @@
 \include{Chapter/Analysis}
 
 %##########################################################
-% Sechstes Kapitel
-%##########################################################
-\include{Chapter/Eval_Disc}
-
-%##########################################################
 % Siebtes Kapitel
 %##########################################################
 \include{Chapter/Conclusion}
@@ -143,18 +133,23 @@
 %##########################################################
 % Literatur
 %##########################################################
+\pagenumbering{Roman}
+\setcounter{page}{1}
 \printbibliography[title=Literaturverzeichnis,heading=bibintoc]
 
 %##########################################################
 % Anhang - nicht verwendete Anhangsseiten bitte kommentieren
 %##########################################################
 \appendix
-\pagenumbering{Roman}
-\setcounter{page}{1}
 
 %\include{Appendix/Figures}
 %\include{Appendix/Tables}
 \include{Appendix/SourceCode}
+
+%##########################################################
+% Eidesstaatlioche Erklärung
+%##########################################################
+\include{Formalities/Affidavit}
 
 % ***********************************************
 \end{document}

@@ -7,7 +7,7 @@
         \coordinate (C) at (0,4.75) {};
         \draw[name path=AC] (A) -- (C);
         \draw[name path=BC] (B) -- (C);
-        \foreach \y/\A in {0/\textbf{Unit},1/Integration,2/E2E,3/Manuell} {
+        \foreach \y/\A in {0/\textbf{\textit{Unit}},1/\textit{Integration},2/\textit{End-to-End},3/\textit{Manual}} {
             \path[name path=horiz] (A|-0,\y) -- (B|-0,\y);
             \draw[name intersections={of=AC and horiz,by=P},
               name intersections={of=BC and horiz,by=Q}] (P) -- (Q)

@@ -5,15 +5,15 @@
         \tikzset{node distance = 0.75cm and 2.0cm}
         \node (n1) at (0,0) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em]  {\colorbox{gray!25}{Es}};
         \node (n2) [block, above=of n1] {Wahrscheinlichkeitsverteilung};
-        \node (n3) [block, above=of n2] {Sampling Strategy};
+        \node (n3) [block, above=of n2] {\textit{Sampling Strategy}};
         \node (n4) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, above=of n3] {\colorbox{gray!25}{ist}};
         \node (n5) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n1] {\colorbox{gray!25}{Es ist}};
         \node (n6) [block, right=of n2] {Wahrscheinlichkeitsverteilung};
-        \node (n7) [block, right=of n3] {Sampling Strategy};
+        \node (n7) [block, right=of n3] {\textit{Sampling Strategy}};
         \node (n8) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n4] {\colorbox{gray!25}{ein}};
         \node (n9) [text width=5em, text centered, right=of n5] {\colorbox{gray!25}{Es ist ein}};
         \node (n10) [block, right=of n6] {Wahrscheinlichkeitsverteilung};
-        \node (n11) [block, right=of n7] {Sampling Strategy};
+        \node (n11) [block, right=of n7] {\textit{Sampling Strategy}};
         \node (n12) [rectangle, text width=5em, text centered, rounded corners, minimum height=3em, right=of n8] {\colorbox{gray!25}{schöner}};
         % Connectors
         \draw [->, thick] (n1) -- (n2);
@@ -31,6 +31,6 @@
         \draw [->, thick] ($(n1.east) - (0.35,0)$) -- (n5);
         \draw [->, thick] (n5) -- (n9);
     \end{tikzpicture}
-    \caption{Wordgenerierung in LLMs}
+    \caption{Wortgenerierung in LLMs}
     \label{fig:word}
 \end{figure}

@@ -10,5 +10,5 @@ public void testAdd() {
     int result = calculator.add(a, b);
 
     // Assert
-    assertEquals(expectedResult, result, "The add method should add two integers correctly");
+    assertEquals(expectedResult, result, "should add 2 int");
 }

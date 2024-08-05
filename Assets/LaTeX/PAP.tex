@@ -17,8 +17,8 @@
     \begin{tikzpicture}[node distance = 1cm, auto]
         % Place nodes
         \node [cloud] (start) {\textbf{Start}};
-        \node [input, right of=start, node distance=3cm] (init) {Eingabe von T/Prompt-Technik};
-		\node [block, right of=init, node distance=3.5cm] (get) {Erfasse Java-Dateien im Projekt};
+        \node [input, right of=start, node distance=3cm] (init) {Eingabe von T/\textit{Prompt}-Technik};
+		\node [block, right of=init, node distance=3.5cm] (get) {Erfasse \textit{Java}-Dateien im Projekt};
 		\node [decision, below of=get, node distance=3cm, fill=green!20] (vor) {vorhanden?};
 		\node [block, below of=init, node distance=3cm] (extr) {Extrahieren aller Infos};
 		\node [cloud, right of=vor, node distance=2.75cm] (stop) {\textbf{Stop}};

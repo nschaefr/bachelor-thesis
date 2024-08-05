@@ -7,7 +7,7 @@
         % Main node with embedded tikzpicture
         \node (n1) at (0,0) [block, minimum height=4em, text depth=0.5em, inner sep=1ex] {
             \begin{tikzpicture}[node distance=0.25cm]
-                \node (n1a) [minimum height=1.5em, inner sep=1ex] {\textbf{Prompt}};
+                \node (n1a) [minimum height=1.5em, inner sep=1ex] {\textbf{\textit{Prompt}}};
                 \node (n1b) [block, text width=6em, minimum height=1.5em, inner sep=1ex, below=of n1a] {Anweisung};
                 \node (n1c) [block, below=of n1b, text width=6em, minimum height=1.5em, inner sep=1ex] {Kontext};
                 \node (n1d) [block, below=of n1c, text width=6em, minimum height=1.5em, inner sep=1ex] {Eingabedaten};
@@ -17,7 +17,7 @@
         \node (n2) [block, minimum height=4em, text depth=0em, inner sep=2ex, right=of n1] {
             \begin{tikzpicture}[node distance=1.25cm]
                 \node (n2a) [block, text width=4em, minimum height=1.5em, inner sep=1ex] {\textbf{LLM}};
-                \node (n2b) [block, text width=4em, minimum height=1.5em, inner sep=1ex, below=of n2a] {training on parameters};
+                \node (n2b) [block, text width=4em, minimum height=1.5em, inner sep=1ex, below=of n2a] {\textit{training on parameters}};
                 \draw [->, thick, dashed] ($(n2a.south) - (0.8,0.0)$) -- ($(n2b.north) - (0.8,0.0)$);
                 \draw [->, thick, dashed] ($(n2b.north) + (0.8,0.0)$) -- ($(n2a.south) + (0.8,0.0)$);
             \end{tikzpicture}
