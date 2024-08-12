@@ -5,7 +5,7 @@ In diesem Kapitel erfolgt die Durchführung der Generierung von Tests mit \texti
 Die Durchführung findet an einer Auswahl von Projekten mit unterschiedlichen Komplexitätsgraden und Größen statt. Die Projekte entstammen dem Unternehmen SENEC GmbH und werden mit ``Projekt x'' (x für eine Zahl) benannt. Projekt 1 besitzt eine Komplexität von 33 und ist mit einer Anzahl an Codezeilen von 318 das kleinste Projekt. Es folgt Projekt 2 mit einer Komplexität von 102 und einer Codezeilenanzahl von 730. Das größte und komplexeste Projekt ist Projekt 3. Die Komplexität beträgt 124 und die Zeilen an Quellcode 1231. [Tabelle \ref{fig:project}]\\\input{Assets/LaTeX/Project-Table}Für jedes Projekt werden 6 Testdurchläufe durchgeführt. Diese entstehen durch die Kombination von \textit{Prompt}-Technik und dem Temperaturparameter. Somit wird der \textit{Zero-Shot Prompt} sowie der \textit{One-Shot Prompt} mit der Temperatur von 0, 0.25 und 0.5 für die Generierung verwendet. Insgesamt erzielen wir 18 Testdurchläufe, welche dafür sorgen, dass eine aussagekräftige Anzahl an Tests generiert wird.
 
 \section{Evaluation der Tests}\label{section:eval}
-Zur Bewertung und Analyse der Testergebnisse werden folgende Metriken benutzt: 
+Zur Bewertung und Analyse der Testergebnisse werden folgende Metriken benutzt:
 \begin{itemize}
     \setlength{\parskip}{1pt}
     \item \textit{Line Coverage}
@@ -21,7 +21,7 @@ $s^2 = \frac{1}{n-1} \displaystyle\sum_{i=1}^{n} (x_i - \bar{x})^2$
     \item $x_i$ - Wert der einzelnen Stichprobe
     \item $\bar{x}$ - Mittelwert/Durchschnitt der Stichproben
 \end{itemize}
-Ist die Varianz berechnet, so kann die Standardabweichung über die Wurzel dieser ermittelt werden: 
+Ist die Varianz berechnet, so kann die Standardabweichung über die Wurzel dieser ermittelt werden:
 $s=\sqrt{s^2}$
 
 
@@ -32,9 +32,9 @@ Die Ergebnisse der \textit{Line Coverage} für Projekt 2 sind in Tabelle \ref{fi
 \input{Assets/LaTeX/Line-Cov-2.tex}
 Tabelle \ref{fig:line-3} stellt die Ergebnisse der \textit{Line Coverage} für Projekt 3 dar. \\Mit 62.7\% erzielt der \textit{One-Shot Prompt} mit einer Temperatur von 0 den besten Wert. Der schlechteste Wert ist 47.3\% und entsteht in der Kombination aus \textit{One-Shot Prompt} und einer Temperatur von 0.5.
 \input{Assets/LaTeX/Line-Cov-3.tex}
-In Tabelle \ref{fig:line-avg} ist der Durchschnitt aller Ergebnisse dargestellt.\\ Alle Werte treffen den angestrebten Bereich von 60\% - 90\%. Den besten Wert erreicht der \textit{One-Shot Prompt} mit einer Temperatur von 0.25. Am schlechtesten schneidet der \textit{Zero-Shot Prompt} mit einer Temperatur von 0.5 ab. \\Es ist klar erkennbar, dass eine hohe Temperatur wie 0.5, im Vergleich zum Rest deutlich schlechter abschneidet. Auch der \textit{One-Shot Prompt} erreicht im Vergleich zum \textit{Zero-Shot Prompt} die besseren Ergebnisse. 
+In Tabelle \ref{fig:line-avg} ist der Durchschnitt aller Ergebnisse dargestellt.\\ Alle Werte treffen den angestrebten Bereich von 60\% - 90\%. Den besten Wert erreicht der \textit{One-Shot Prompt} mit einer Temperatur von 0.25. Am schlechtesten schneidet der \textit{Zero-Shot Prompt} mit einer Temperatur von 0.5 ab. \\Es ist klar erkennbar, dass eine hohe Temperatur wie 0.5, im Vergleich zum Rest deutlich schlechter abschneidet. Auch der \textit{One-Shot Prompt} erreicht im Vergleich zum \textit{Zero-Shot Prompt} die besseren Ergebnisse.
 \input{Assets/LaTeX/Line-Cov-avg.tex}
-Tabelle \ref{fig:line-var} zeigt die Standardabweichung der obigen Messwerte.\\ Die größte Abweichung entsteht in der Kombination aus \textit{Zero-Shot Prompt} und der Temperatur 0. Mit einer Abweichung von 6.6 ist der \textit{Zero-Shot Prompt} mit der Temperatur 0.5 am konsistentesten.\\ In allen Fällen verursacht der Leistungseinbruch in Projekt 3 die größte Abweichung.
+Tabelle \ref{fig:line-var} zeigt die Standardabweichung der obigen Messwerte.\\ Die größte Abweichung entsteht in der Kombination aus \textit{Zero-Shot Prompt} und der Temperatur 0. Mit einer Abweichung von 6.6 ist der \textit{Zero-Shot Prompt} mit der Temperatur 0.5 am konsistentesten. In allen Fällen verursacht der Leistungseinbruch in Projekt 3 die größte Abweichung und erweckt den Anschein einer schlechteren Konsistenz bei zunehmender Komplexität.
 \input{Assets/LaTeX/Line-Cov-var.tex}
 
 \subsection{Branch Coverage}
@@ -44,9 +44,9 @@ In Tabelle \ref{fig:branch-2} erreicht der \textit{One-Shot Prompt} mit einer Te
 \input{Assets/LaTeX/Branch-Cov-2.tex}
 Für Projekt 3 fallen die Werte erheblich schlechter aus. Der \textit{One-Shot Prompt} erzielt mit 32.0\% und einer Temperatur von 0 das beste Ergebnis. Die Temperatur von 0.5 schneidet am schlechtesten ab.
 \input{Assets/LaTeX/Branch-Cov-3.tex}
-Tabelle \ref{fig:branch-avg} zeigt die Durchschnittswerte der \textit{Branch Coverage}. \\Es ist eine klare Verschlechterung im Vergleich zur \textit{Line Coverage} zu erkennen. Im Schnitt erreicht der \textit{One-Shot Prompt} mit der Temperatur 0.25 erneut den besten Wert. Auch der \textit{Zero-Shot Prompt} schneidet in Kombination mit einer Temperatur von 0.5 am schlechtesten ab.\\ Des Weiteren wird deutlich, dass die Temperatur von 0.5 die schlechtesten Werte erzielt. Der Vergleich der \textit{Prompts} ist ausgeglichener als zuvor, jedoch liegen alle Ergebnisse unter dem vorher festgelegten Idealbereich. 
+Tabelle \ref{fig:branch-avg} zeigt die Durchschnittswerte der \textit{Branch Coverage}. \\Es ist eine klare Verschlechterung im Vergleich zur \textit{Line Coverage} zu erkennen. Im Schnitt erreicht der \textit{One-Shot Prompt} mit der Temperatur 0.25 erneut den besten Wert. Auch der \textit{Zero-Shot Prompt} schneidet in Kombination mit einer Temperatur von 0.5 am schlechtesten ab.\\ Des Weiteren wird deutlich, dass die Temperatur von 0.5 die schlechtesten Werte erzielt. Der Vergleich der \textit{Prompts} ist ausgeglichener als zuvor, jedoch liegen alle Ergebnisse unter dem vorher festgelegten Idealbereich.
 \input{Assets/LaTeX/Branch-Cov-avg.tex}
-Der \textit{One-Shot Prompt} erzielt mit einer Temperatur von 0 die beste Standardabweichung von 10.7. Am schlechtesten schneidet der \textit{Zero-Shot Prompt} mit Temperatur 0 ab. Auch hier wird deutlich, dass die Verschlechterung in Projekt 3 den größten Einfluss auf das Ergebnis nimmt. [Tabelle \ref{fig:branch-var}]
+Der \textit{One-Shot Prompt} erzielt mit einer Temperatur von 0 die beste Standardabweichung von 10.7. Am schlechtesten schneidet der \textit{Zero-Shot Prompt} mit Temperatur 0 ab. Auch hier wird deutlich, dass die Verschlechterung in Projekt 3 den größten Einfluss auf das Ergebnis nimmt. [Tabelle \ref{fig:branch-var}] Im Vergleich zur \textit{Line Coverage} fällt die Standardabweichung im Schnitt schlechter aus, was auf eine höhere Inkonsistenz aller Kombinationen bei der Abdeckung von \textit{Code Branches} aufgrund steigender Komplexität hindeutet.
 \input{Assets/LaTeX/Branch-Cov-var.tex}
 
 \subsection{Overall Coverage}
